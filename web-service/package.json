@@ -1,0 +1,24 @@
+{
+  "name": "web-service",
+  "version": "1.0.0",
+  "description": "web-service created for the midiavox internship program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web-service"
+  ],
+  "author": "Gabriel Kristian",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "json2csv": "^5.0.6",
+    "mongoose": "^5.12.3",
+    "mysql2": "^2.2.5",
+    "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-html": "^6.1.2"
+  }
+}

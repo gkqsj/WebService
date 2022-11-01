@@ -1,0 +1,169 @@
+body {
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    background-color: #413e3c;
+    color: white;
+    height: 95%;
+    width: 95%;
+    border: 1px solid black;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    color: white;
+    font-size: 0.85em;
+    background-color: #7fa650;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 3px;
+    width: 60%;
+}
+
+.master {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #272522;
+    color: hsla(0, 0%, 100%, .65);
+    margin: 20px;
+    width: 70%;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    border-radius: 10px;
+}
+
+.head {
+    width: 100%;
+    justify-content: center;
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.contentHidden {
+    visibility: hidden;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.entryRow {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    border-radius: 3px;
+    background-color: #ecedf1;
+    width: 20px;
+    height: 20px;
+    filter: invert(80%);
+}
+
+.iconContent {
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.sidePopUp {
+    visibility: hidden;
+    padding: 7px;
+    background-color: #272522;
+    color: hsla(0, 0%, 100%, .65);
+    margin-top: 185px;
+    width: 280px;
+    height: 100px;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid gray;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sidePopUpShow {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.75s;
+    -moz-animation: fadeIn 0.75s;
+    -o-animation: fadeIn 0.75s;
+    animation: fadeIn 0.75s;
+}
+
+.sidePopUp input {
+    width: 150px;
+}
+
+.sidePopUp button {
+    margin: 3px 35px;
+    width: fit-content;
+}
+
+.addRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.greenButton {
+    background-color: #c920aa;
+}

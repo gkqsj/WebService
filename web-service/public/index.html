@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Carrega o jQuery, usado unicamente para limpar a tabela para reinserção -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="./index.js"></script>
+<link rel="stylesheet" href="./index.css">
+
+<head>
+</head>
+
+<body>
+    <div class="master">
+
+        <div class="row">
+            <!-- As próxiams 4 divs de classe "row" representam o filtro, duas entradas e seus botões -->
+            <div class="content">Filtros</div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+
+        <div class="row">
+            <div class="content">ID</div>
+            <div class="content"><input type="text" id="fetId" name="fetId"></div>
+            <div class="content"></div>
+        </div>
+
+        <div class="row">
+            <div class="content">DESTINATION</div>
+            <div class="content"><input type="text" id="fetDestination" name="fetDestination"></div>
+            <div class="content"></div>
+        </div>
+        <!-- A função doGet(page, firstOrClean) é executada para realizar uma pesquisa em que -->
+        <!-- o boolean sera true se for necessário ler o input, caso contrário, apague -->
+        <div style="margin: 15px 0px;" class="row">
+            <div class="content"></div>
+            <div class="content"><button onclick="doGet(0, false)">Aplicar</button></div>
+            <div class="content"><button onclick="doGet(0, true)">Limpar</button></div>
+        </div>
+
+        <div class="row">
+            <div class="content"><br></div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+
+        <div class="row">
+            <div class="content">ID</div>
+            <div class="content">DESTINATION</div>
+            <div class="content"></div>
+        </div>
+
+        <div class="row">
+            <div class="content"><br></div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+        <div id="db_entries">
+            <!-- div que será preenchida com as entradas na tabela dinamicamente usando DOM -->
+
+        </div>
+
+        <div class="row">
+            <div class="content"><br></div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+        <!-- inputs que são invisíveis, se tornam visíveis ao iniciar uma edição na tabela -->
+        <div class="row">
+            <div class="contentHidden" id="editId"><input style="background-color: #496724;" type="text" id="editIdInput"></div>
+            <div class="contentHidden" id="editDestination"><input style="background-color: #496724;" type="text" id="editDestinationInput"></div>
+            <div class="content"><button onclick="togglePopUp()">+ Adicionar</button></div>
+        </div>
+
+        <div class="row">
+            <div class="content"><br></div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+        <!-- Botões de paginação e conversão em CSV -->
+        <div style="margin: 5px 0px;" class="foot">
+            <div class="content"><button onclick="saveToCSV()">Salvar CSV</button></div>
+            <div class="content"><button onclick="changePage(false)">Pg down</button></div>
+            <div class="content"><button onclick="changePage(true)">Pg up</button></div>
+        </div>
+    </div>
+    <div class="sidePopUp" id="sidePopUp">
+        <!-- Essa div é invisível, se torna visível ao iniciar uma adição à tabela -->
+        <div class="addRow">
+            <div class="addContent">ID</div>
+            <div class="addContent"><input type="text" id="addId" name="addId"></div>
+        </div>
+
+        <div class="addRow">
+            <div class="addContent">DESTINATION</div>
+            <div class="addContent"><input type="text" id="addDestination" name="addDestination"></div>
+        </div>
+        <!-- A função cancelAdd() apaga os registros nos inputs de adição -->
+        <!-- Essa função também é chamada pela função de requisição PUT quando a operação é realizada com sucesso -->
+        <div style="margin-top: 10px;" class="addRow">
+            <button style="background-color: red;" onclick="cancelAdd()">Cancelar</button>
+            <button onclick="doPutAdd()">Confirmar</button>
+        </div>
+    </div>
+</body>
+
+</html>
